@@ -157,3 +157,5 @@ ionic build --prod
 ionic capacitor run android
 ionic capacitor run ios
 ```
+
+TODO criar projeto Ionic, instalar Chart.js e copiar os arquivos!
