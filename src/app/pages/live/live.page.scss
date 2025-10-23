@@ -1,0 +1,89 @@
+// src/app/pages/live/live.page.scss
+.live-indicator {
+  position: fixed;
+  top: 70px;
+  left: 20px;
+  z-index: 1000;
+
+  ion-badge {
+    font-size: 1rem;
+    padding: 8px 16px;
+
+    ion-icon {
+      margin-right: 4px;
+    }
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  ion-button {
+    flex: 1;
+  }
+}
+
+.analyzing {
+  ion-icon {
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.chart-container {
+  height: 300px;
+  position: relative;
+}
+
+.card-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-meta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+
+  .comment-user,
+  .comment-time {
+    font-size: 0.875rem;
+    color: var(--ion-color-medium);
+  }
+}
+
+@media (max-width: 768px) {
+  .button-group {
+    flex-direction: column;
+  }
+
+  .live-indicator {
+    left: 10px;
+  }
+}

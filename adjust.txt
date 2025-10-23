@@ -1,0 +1,117 @@
+// package.json
+{
+  "name": "live-insights-ionic",
+  "version": "1.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^17.0.0",
+    "@angular/common": "^17.0.0",
+    "@angular/core": "^17.0.0",
+    "@angular/forms": "^17.0.0",
+    "@angular/platform-browser": "^17.0.0",
+    "@angular/platform-browser-dynamic": "^17.0.0",
+    "@angular/router": "^17.0.0",
+    "@ionic/angular": "^7.5.0",
+    "chart.js": "^4.4.0",
+    "rxjs": "^7.8.0",
+    "tslib": "^2.6.0",
+    "zone.js": "^0.14.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.0.0",
+    "@angular/cli": "^17.0.0",
+    "@angular/compiler": "^17.0.0",
+    "@angular/compiler-cli": "^17.0.0",
+    "@ionic/angular-toolkit": "^11.0.0",
+    "typescript": "~5.2.0"
+  }
+}
+
+// ========================================
+
+// angular.json (simplified)
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "app": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "www",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
+              }
+            ],
+            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "scripts": []
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "app:build"
+          }
+        }
+      }
+    }
+  }
+}
+
+// ========================================
+
+// tsconfig.json
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "lib": ["ES2022", "dom"],
+    "useDefineForClassFields": false
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}
+
+// ========================================
+
+// ionic.config.json
+{
+  "name": "live-insights-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

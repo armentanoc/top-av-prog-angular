@@ -1,0 +1,96 @@
+
+// src/app/pages/dashboard/dashboard.page.html
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-icon name="videocam"></ion-icon>
+      Live Insights
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="page-header">
+    <div class="header-content">
+      <div>
+        <h1>Dashboard de Lives</h1>
+        <p>Gerencie todas as suas transmissões</p>
+      </div>
+      <ion-button (click)="navigateToCadastro()">
+        <ion-icon slot="start" name="add-circle"></ion-icon>
+        Nova Live
+      </ion-button>
+    </div>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <div class="card-header-content">
+        <ion-card-title>Suas Lives</ion-card-title>
+        
+        <ion-searchbar 
+          [(ngModel)]="searchTerm" 
+          (ionInput)="filterLives()"
+          placeholder="Buscar lives..."
+          animated
+        ></ion-searchbar>
+      </div>
+    </ion-card-header>
+
+    <ion-card-content class="ion-no-padding">
+      <ion-list>
+        <ion-item *ngFor="let live of filteredLives" lines="full">
+          <div class="live-item-content">
+            <div class="live-status">
+              <ion-badge [color]="getStatusColor(live.status)" [class.pulse]="live.status === 'live'">
+                <ion-icon *ngIf="live.status === 'live'" name="radio-button-on"></ion-icon>
+                <ion-icon *ngIf="live.status === 'scheduled'" name="time"></ion-icon>
+                <ion-icon *ngIf="live.status === 'finished'" name="checkmark-circle"></ion-icon>
+                {{ getStatusText(live.status) }}
+              </ion-badge>
+            </div>
+
+            <div class="live-info">
+              <h3>{{ live.title }}</h3>
+              <p>{{ live.description }}</p>
+            </div>
+
+            <div class="live-comments">
+              <ion-icon name="chatbubbles" [color]="live.comments > 0 ? 'success' : 'medium'"></ion-icon>
+              <span>{{ live.comments > 0 ? live.comments : '-' }}</span>
+            </div>
+
+            <div class="live-actions">
+              <ion-button *ngIf="live.status === 'live'" size="small" fill="outline" (click)="viewLive(live.id)">
+                <ion-icon slot="icon-only" name="eye"></ion-icon>
+              </ion-button>
+              
+              <ion-button *ngIf="live.status === 'live'" size="small" fill="outline" color="danger" (click)="stopLive(live.id)">
+                <ion-icon slot="icon-only" name="stop-circle"></ion-icon>
+              </ion-button>
+
+              <ion-button *ngIf="live.status === 'scheduled'" size="small" fill="outline" (click)="editLive(live.id)">
+                <ion-icon slot="icon-only" name="create"></ion-icon>
+              </ion-button>
+              
+              <ion-button *ngIf="live.status === 'scheduled'" size="small" fill="outline" color="danger" (click)="deleteLive(live.id)">
+                <ion-icon slot="icon-only" name="trash"></ion-icon>
+              </ion-button>
+
+              <ion-button *ngIf="live.status === 'finished'" size="small" fill="outline" (click)="viewStats(live.id)">
+                <ion-icon slot="icon-only" name="bar-chart"></ion-icon>
+              </ion-button>
+              
+              <ion-button *ngIf="live.status === 'finished'" size="small" fill="outline" color="medium" (click)="archiveLive(live.id)">
+                <ion-icon slot="icon-only" name="archive"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

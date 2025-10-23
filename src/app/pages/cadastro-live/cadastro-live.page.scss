@@ -1,0 +1,59 @@
+// src/app/pages/cadastro-live/cadastro-live.page.scss
+.page-header {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--ion-color-light);
+
+  .header-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--ion-color-medium);
+  }
+}
+
+ion-card {
+  margin: 20px;
+}
+
+ion-item {
+  --padding-start: 0;
+  
+  ion-label {
+    ion-icon {
+      margin-right: 8px;
+    }
+  }
+}
+
+ion-note {
+  padding: 0 16px;
+  font-size: 0.875rem;
+  color: var(--ion-color-medium);
+}
+
+.error-text {
+  padding: 0 16px;
+  font-size: 0.875rem;
+  margin: 0.5rem 0;
+}
+
+.button-container {
+  padding: 20px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  ion-button {
+    flex: 1;
+    min-width: 150px;
+  }
+}

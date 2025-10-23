@@ -1,0 +1,67 @@
+
+// src/app/pages/home/home.page.html
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      <ion-icon name="videocam"></ion-icon>
+      Live Insights
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>Bem-vindo ao Live Insights</h1>
+      <p>Observabilidade e moderação nas suas transmissões ao vivo.</p>
+      
+      <div class="button-group">
+        <ion-button size="large" (click)="navigateToDashboard()">
+          <ion-icon slot="start" name="speedometer"></ion-icon>
+          Acessar Dashboard
+        </ion-button>
+        
+        <ion-button size="large" fill="outline" color="light" (click)="navigateToCadastro()">
+          <ion-icon slot="start" name="add-circle"></ion-icon>
+          Criar Nova Live
+        </ion-button>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <h2>Principais Recursos</h2>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="6">
+          <ion-card class="feature-card">
+            <ion-card-content class="text-center">
+              <ion-icon name="speedometer" color="primary" class="large-icon"></ion-icon>
+              <h3>Dashboard Completo</h3>
+              <p>Visualize todas as suas lives em um só lugar. Gerencie transmissões ativas e agendadas.</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        
+        <ion-col size="12" size-md="6">
+          <ion-card class="feature-card">
+            <ion-card-content class="text-center">
+              <ion-icon name="trending-up" color="warning" class="large-icon"></ion-icon>
+              <h3>Métricas e Analytics</h3>
+              <p>Acompanhe visualizações, engajamento e crescimento da sua audiência.</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="dark">
+    <ion-title class="ion-text-center">
+      © 2024 Live Insights - Desenvolvido com ❤️ usando Ionic
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
