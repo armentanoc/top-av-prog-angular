@@ -1,0 +1,7 @@
+{
+  "name": "live-insights",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

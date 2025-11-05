@@ -41,9 +41,9 @@ src/
 
 ```bash
 npm install -g @ionic/cli
-ionic start live-insights blank --type=angular
 cd live-insights
 ```
+*Use NgModules
 
 ### 2. Instalar dependências adicionais
 
@@ -58,6 +58,7 @@ Crie as pastas e arquivos conforme a estrutura acima e copie o código fornecido
 ### 4. Executar o projeto
 
 ```bash
+ionic build
 ionic serve
 ```
 
