@@ -8,6 +8,7 @@ import { AlertController } from '@ionic/angular';
   selector: 'app-cadastro-live',
   templateUrl: './cadastro-live.page.html',
   styleUrls: ['./cadastro-live.page.scss'],
+  standalone: false
 })
 export class CadastroLivePage implements OnInit {
   liveForm: FormGroup;

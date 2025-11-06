@@ -9,7 +9,7 @@ import { CadastroLivePage } from './cadastro-live.page';
 const routes: Routes = [
   {
     path: '',
-    component: CadastroLivePage
+    component: CadastroLivePage,
   }
 ];
 

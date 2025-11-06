@@ -14,7 +14,9 @@ interface Live {
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
+  standalone: false
 })
+
 export class DashboardPage implements OnInit {
   lives: Live[] = [];
   filteredLives: Live[] = [];

@@ -17,7 +17,9 @@ interface Comment {
   selector: 'app-live',
   templateUrl: './live.page.html',
   styleUrls: ['./live.page.scss'],
+  standalone: false
 })
+
 export class LivePage implements OnInit, AfterViewInit {
   @ViewChild('chartCanvas') chartCanvas!: ElementRef<HTMLCanvasElement>;
   
