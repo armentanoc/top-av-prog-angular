@@ -106,33 +106,12 @@ O aplicativo estará disponível em `http://localhost:8100`
 - `ion-icon` - Ícones (Ionicons)
 - `ion-grid` / `ion-row` / `ion-col` - Layout grid
 
-## 🔄 Diferenças do Bootstrap Original
-
-| Bootstrap | Ionic Angular |
-|-----------|---------------|
-| Classes CSS | Componentes Angular |
-| jQuery/Vanilla JS | TypeScript + RxJS |
-| Modal JS | AlertController |
-| Form validation HTML5 | Reactive Forms |
-| Bootstrap Icons | Ionicons |
-| Navbar collapse | ion-menu/tabs |
-| Static pages | SPA com routing |
-
-## 📊 Funcionalidades Mocadas
+## 📊 Funcionalidades 
 
 - **Dashboard**: Lista de 6 lives com diferentes status
 - **Análise**: Dados de sentimentos pré-definidos
 - **Gráfico**: Chart.js com dados estáticos
 - **Comentários**: Array mock de 5 comentários
-
-## 🎯 Próximos Passos (Opcional)
-
-1. **Backend Integration**: Conectar com API real
-2. **State Management**: Implementar NgRx ou Akita
-3. **Real-time**: WebSocket para análise ao vivo
-4. **Persistência**: Ionic Storage para dados locais
-5. **Mobile**: Build para Android/iOS com Capacitor
-6. **Testes**: Jasmine/Karma para unit tests
 
 ## 📝 Observações
 
